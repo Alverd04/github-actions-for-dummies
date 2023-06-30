@@ -1,6 +1,6 @@
 name: Challenge3
 on:
-  merge:
+  push:
     branches: [master]
 
 jobs:
