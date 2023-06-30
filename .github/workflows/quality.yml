@@ -1,10 +1,10 @@
 name: Quality
 on:
-  pull_request:
+  push:
     branches: [master]
 
 jobs:
-  quality:
+  unit_test_and_lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -14,3 +14,21 @@ jobs:
         run: npm test
       - name: Run lint
         run: npm run lint
+  e2e_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Run e2e tests
+        run: npm run e2e
+
+  deploy:
+    needs: [unit_test_and_lint, e2e_test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Deploy to production
+        run: npm run deploy
