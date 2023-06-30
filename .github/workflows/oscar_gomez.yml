@@ -1,14 +1,14 @@
 name: liandola
 on:
-  push:
-    branches: [master]
-
+    pull_request:
+      branches: [master]
+  
 jobs:
   say_hello:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Install dependencies
-        run: npm install
-      - name: Say hello
-        run: npm run say_hello
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: npm install
+    - name: Say hello
+      run: npm run say_hello
