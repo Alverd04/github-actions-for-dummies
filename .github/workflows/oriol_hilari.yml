@@ -1,0 +1,11 @@
+name: Challenge One, FIGHT!
+on:
+  pull_request:
+    branches: [master]
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "Hello by Oriol Hilari 👋"
