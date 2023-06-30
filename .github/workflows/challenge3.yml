@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Say Hello
         run: echo "¡Holi! 👋🏻"
-  Intall & Lint & Test:
+  Quality:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
