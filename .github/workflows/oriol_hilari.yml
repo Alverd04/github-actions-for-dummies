@@ -1,0 +1,10 @@
+name: Quality
+on:
+  push:
+      branches: [master]
+
+jobs:
+  unit_test_and_lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "There's a thing in my code!"
