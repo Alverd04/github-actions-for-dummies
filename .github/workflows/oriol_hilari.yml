@@ -1,10 +1,11 @@
-name: Quality
+name: Challenge One, FIGHT!
 on:
   push:
       branches: [master]
 
 jobs:
-  unit_test_and_lint:
+  say_hello:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "There's a thing in my code!"
+      - uses: actions/checkout@v2
+      - run: echo "Hello by Oriol Hilari 👋"
