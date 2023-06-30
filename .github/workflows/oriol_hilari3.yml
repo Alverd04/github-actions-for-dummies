@@ -1,9 +1,14 @@
 name: Challenge Two, FIGHT!
 on:
-  pull_request:
+  push:
     branches: [master]
 
 jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "Hello by Oriol Hilari 👋"
   do_more_things:
     runs-on: ubuntu-latest
     steps:
@@ -11,6 +16,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 16
+      - name: - run: echo "Second challenge"
       - name: Install dependencies
         run: npm install
       - name: Run tests
