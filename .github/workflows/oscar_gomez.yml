@@ -9,6 +9,6 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - name: Install dependencies
-                run: npm install
+              run: npm install
             - name: Say hello
-                run: npm run say_hello
+              run: npm run say_hello
