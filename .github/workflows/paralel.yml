@@ -19,7 +19,7 @@ jobs:
         run: |
           echo "Hello world"
       - name: log into PR
-        if: github.event_name == 'push'
+        if: github.event_name !== 'push'
         uses: actions/github-script@v5
         with:
           script: |
