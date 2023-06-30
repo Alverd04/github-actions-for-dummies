@@ -1,4 +1,4 @@
-name: serial
+name: parallel
 
 on:
   push:
