@@ -1,6 +1,6 @@
 name: liandola
 on:
-    pull_request:
+    push:
       branches: [master]
   
 jobs:
@@ -20,3 +20,12 @@ jobs:
         run: npm install
       - name: Testing
         run: npm run test
+  albert_rulez:
+    needs: [say_hello, run_tests]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: npm install
+      - name: Deploy
+        run: npm run deploy
